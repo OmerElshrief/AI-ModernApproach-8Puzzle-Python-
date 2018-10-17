@@ -117,7 +117,7 @@ class Problem:
             print(goalNode.state)
             goalNode = goalNode.parent
             count+=1
-        print("Depth of solution is",count)
+
 
 
 
