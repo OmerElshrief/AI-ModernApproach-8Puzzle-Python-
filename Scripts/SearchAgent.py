@@ -11,10 +11,10 @@ from copy import copy, deepcopy
     the same state.  Also includes the action that got us to this state, and
     the total path_cost (also known as g) to reach the node."""
 class Node:
-    def __init__(self,state,parent,action,stepCost):
+    def __init__(self,state,parent,action,path_cost):
         self.state=state
         self.parent=parent
-        self.stepCost=stepCost
+        self.path_cost=path_cost
 
 
 """The abstract class for a formal problem. You should subclass
@@ -110,10 +110,14 @@ class Problem:
     def getSolution(self,goalNode=Node(0,0,0,0) ):
         node = Node(0,0,0,0)
         node = goalNode
-
+        count =0;
+        print("Path cost = ",node.path_cost)
+        print("\n")
         while goalNode :
             print(goalNode.state)
             goalNode = goalNode.parent
+            count+=1
+        print("Depth of solution is",count)
 
 
 
@@ -131,7 +135,7 @@ class SearchAgent:
 
 
     def breadth_first_search(self , problem):
-        node = Node(problem.initialState,None,None,1)
+        node = Node(problem.initialState,None,None,0)
 
 
         if (problem.goalTest(node.state)):
@@ -145,7 +149,7 @@ class SearchAgent:
             node = frontier.get()
 
             for action in problem.getActions(node.state):
-                child = Node(problem.getNewState(node.state,action),node,action,1)
+                child = Node(problem.getNewState(node.state,action),node,action,node.path_cost+1)
                 if problem.goalTest(child.state):
                     return problem.getSolution(child)
                 if child not in visited and child not in explored:
@@ -154,6 +158,8 @@ class SearchAgent:
 
             explored.append(node)
 
+    def depth_first_search(self,problem):
+        node = Node(problem.initialState,None,None,1)
 
 
 
