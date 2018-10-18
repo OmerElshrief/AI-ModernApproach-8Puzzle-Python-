@@ -1,6 +1,29 @@
 import queue
 from collections import deque
 from copy import copy, deepcopy
+import tkinter
+import sys
+
+
+class Stack:
+
+    def __init__(self):
+        self.stack = []
+
+    def add(self, dataval):
+        # Use list append method to add element
+        if dataval not in self.stack:
+            self.stack.append(dataval)
+            return True
+        else:
+            return False
+
+    # Use list pop method to remove element
+    def remove(self):
+        if len(self.stack) <= 0:
+            return ("No element in the Stack")
+        else:
+            return self.stack.pop()
 
 
 
@@ -56,7 +79,7 @@ class Problem:
             if j == 1: #The Fifth block of the Board, The Zero position may go to any position
                 return 1,2,3,4
             if j == 2: #The Sixth block of the Board, The Zero position may  go to NORTH, WEST and SOUTH
-                return 1,2,4
+                return 4,2,1
 
         if i == 2:
             if j == 0:  #The Seventh block of the Board, The Zero position may go to NoORTH, EAST
@@ -158,18 +181,66 @@ class SearchAgent:
 
             explored.append(node)
 
+
     def depth_first_search(self,problem):
         node = Node(problem.initialState,None,None,1)
 
+        if (problem.goalTest(node.state)):
+           return problem.getSolution(node.state)
+        frontier = Stack()
+        explored = list()
+        visited = list()
+        frontier.add(node)
+        visited.append(node.state)
+        while frontier:
+             node = frontier.remove()
+             for action in problem.getActions(node.state):
+                 child = Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
+
+                 if problem.goalTest(child.state):
+                    return problem.getSolution(child)
+                 if child.state not in visited and child not in explored:
+                   frontier.add(child)
+                   visited.append(child.state)
+
+             explored.append(node)
 
 
 
+    def uniform_cost_search(self,problem):
+
+        node = Node(problem.initialState, None, None, 0)
 
 
+        if (problem.goalTest(node.state)):
+            return problem.getSolution(node.state)
+        frontier = queue.PriorityQueue()
+        explored = list()
+        visited = list()
+        frontier.put(node)
+        visited.append(node)
+        while frontier:
+            node = frontier.get()
+
+            for action in problem.getActions(node.state):
+              child = Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
+              print(child.state)
+              if problem.goalTest(child.state):
+                return problem.getSolution(child)
+              if child not in visited and child not in explored:
+                frontier.put(child)
+                visited.append(child)
+
+        explored.append(node)
 
 #Testing
 initialCondition = [[1,2,5],[3,4,0],[6,7,8]]
 problem = Problem(initialCondition)
 agent = SearchAgent()
 agent.breadth_first_search(problem)
-
+print("DFS: \n")
+agent.depth_first_search(problem)
+print("UCS: \n")
+agent.uniform_cost_search(problem)
+top = tkinter.Tk()
+top.mainloop()
