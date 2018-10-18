@@ -2,6 +2,7 @@ import queue
 from collections import deque
 from copy import copy, deepcopy
 import tkinter
+import Scripts.problem
 import sys
 
 
@@ -26,18 +27,7 @@ class Stack:
             return self.stack.pop()
 
 
-"""A node in a search tree. Contains a pointer to the parent (the node
-    that this is a successor of) and to the actual state for this node. Note
-    that if a state is arrived at by two paths, then there are two nodes with
-    the same state.  Also includes the action that got us to this state, and
-    the total path_cost (also known as g) to reach the node."""
 
-
-class Node:
-    def __init__(self, state, parent, action, path_cost):
-        self.state = state
-        self.parent = parent
-        self.path_cost = path_cost
 
 
 """The abstract class for a formal problem. You should subclass
@@ -58,7 +48,7 @@ class SearchAgent:
         self.state = state
 
     def breadth_first_search(self, problem):
-        node = Node(problem.initialState, None, None, 0)
+        node = Scripts.problem.Node(problem.initialState, None, None, 0)
 
         if (problem.goalTest(node.state)):
             return problem.getSolution(node.state)
@@ -71,7 +61,7 @@ class SearchAgent:
             node = frontier.get()
 
             for action in problem.getActions(node.state):
-                child = Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
+                child = Scripts.problem.Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
                 if problem.goalTest(child.state):
                     return problem.getSolution(child)
                 if child not in visited and child not in explored:
@@ -81,7 +71,7 @@ class SearchAgent:
             explored.append(node)
 
     def depth_first_search(self, problem):
-        node = Node(problem.initialState, None, None, 1)
+        node = Scripts.problem.Node(problem.initialState, None, None, 1)
 
         if (problem.goalTest(node.state)):
             return problem.getSolution(node.state)
@@ -93,7 +83,7 @@ class SearchAgent:
         while frontier:
             node = frontier.remove()
             for action in problem.getActions(node.state):
-                child = Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
+                child = Scripts.problem.Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
 
                 if problem.goalTest(child.state):
                     return problem.getSolution(child)
@@ -105,7 +95,7 @@ class SearchAgent:
 
     def uniform_cost_search(self, problem):
 
-        node = Node(problem.initialState, None, None, 0)
+        node = Scripts.problem.Node(problem.initialState, None, None, 0)
 
         if (problem.goalTest(node.state)):
             return problem.getSolution(node.state)
@@ -118,7 +108,7 @@ class SearchAgent:
             node = frontier.get()
 
             for action in problem.getActions(node.state):
-                child = Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
+                child = Scripts.problem.Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
                 print(child.state)
                 if problem.goalTest(child.state):
                     return problem.getSolution(child)
@@ -131,12 +121,11 @@ class SearchAgent:
 
 # Testing
 initialCondition = [[1, 2, 5], [3, 4, 0], [6, 7, 8]]
-problem = Problem(initialCondition)
+problem = Scripts.problem.Problem(initialCondition)
 agent = SearchAgent()
-agent.breadth_first_search(problem)
 print("DFS: \n")
 agent.depth_first_search(problem)
-print("UCS: \n")
-agent.uniform_cost_search(problem)
-top = tkinter.Tk()
-top.mainloop()
+# print("UCS: \n")
+# agent.uniform_cost_search(problem)
+# top = tkinter.Tk()
+# top.mainloop()

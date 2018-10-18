@@ -1,3 +1,20 @@
+from copy import deepcopy
+
+
+"""A node in a search tree. Contains a pointer to the parent (the node
+    that this is a successor of) and to the actual state for this node. Note
+    that if a state is arrived at by two paths, then there are two nodes with
+    the same state.  Also includes the action that got us to this state, and
+    the total path_cost (also known as g) to reach the node."""
+
+
+class Node:
+    def __init__(self, state, parent, action, path_cost):
+        self.state = state
+        self.parent = parent
+        self.path_cost = path_cost
+
+
 class Problem:
 
     def __init__(self, initial, goal=None):
@@ -87,3 +104,5 @@ class Problem:
             print(goalNode.state)
             goalNode = goalNode.parent
             count += 1
+
+
