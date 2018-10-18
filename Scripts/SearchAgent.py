@@ -1,8 +1,6 @@
 import queue
-from collections import deque
-from copy import copy, deepcopy
-import tkinter
-import Scripts.problem
+from Scripts.problem import *
+from Scripts.helpers import *
 import sys
 
 
@@ -37,7 +35,7 @@ class SearchAgent:
         self.state = state
 
     def breadth_first_search(self, problem):
-        node = Scripts.problem.Node(problem.initialState, None, None, 0)
+        node = Node(problem.initialState, None, None, 0)
 
         if (problem.goalTest(node.state)):
             return problem.getSolution(node.state)
@@ -50,7 +48,7 @@ class SearchAgent:
             node = frontier.get()
 
             for action in problem.getActions(node.state):
-                child = Scripts.problem.Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
+                child = Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
                 if problem.goalTest(child.state):
                     return problem.getSolution(child)
                 if child not in visited and child not in explored:
@@ -60,7 +58,7 @@ class SearchAgent:
             explored.append(node)
 
     def depth_first_search(self, problem):
-        node = Scripts.problem.Node(problem.initialState, None, None, 1)
+        node = Node(problem.initialState, None, None, 1)
 
         if (problem.goalTest(node.state)):
             return problem.getSolution(node.state)
@@ -72,7 +70,7 @@ class SearchAgent:
         while frontier:
             node = frontier.remove()
             for action in problem.getActions(node.state):
-                child = Scripts.problem.Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
+                child = Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
 
                 if problem.goalTest(child.state):
                     return problem.getSolution(child)
@@ -82,41 +80,42 @@ class SearchAgent:
 
             explored.append(node)
 
-    def uniform_cost_search(self, problem):
 
-        node = Scripts.problem.Node(problem.initialState, None, None, 0)
-
-        if problem.goalTest(node.state):
-            return problem.getSolution(node.state)
-        frontier = queue.PriorityQueue()
-        explored = list()
-        visited = list()
-        frontier.put(node)
-        visited.append(node)
-        while frontier:
-            node = frontier.get()
-
-            for action in problem.getActions(node.state):
-                child = Scripts.problem.Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
-                print(child.state)
-                if problem.goalTest(child.state):
-                    return problem.getSolution(child)
-                if child not in visited and child not in explored:
-                    frontier.put(child)
-                    visited.append(child)
-
-        explored.append(node)
+"""Initializer function to start"""
 
 
-# Testing
-initialCondition = [[1, 2, 5], [3, 4, 0], [6, 7, 8]]
-problem = Scripts.problem.Problem(initialCondition)
-agent = SearchAgent()
-# print("BFS: \n")
-# agent.breadth_first_search(problem)
-# print("DFS: \n")
-# agent.depth_first_search(problem)
-print("UCS: \n")
-agent.uniform_cost_search(problem)
-# top = tkinter.Tk()
-# top.mainloop()
+def main():
+    # Our test case: 1,2,5,3,4,0,6,7,8
+    puz_str = input("Welcome \n please input your puzzle comma seperated:")
+
+    # Parse input into a list
+    puzzle = puz_str.split(",")
+
+    # loop to trim any input with spaces in list and type cast input
+    for i in range(0, len(puzzle)):
+        puzzle[i] = int(puzzle[i].strip())
+
+    initialCondition = to_matrix(puzzle, 3)
+    problem = Problem(initialCondition)
+    agent = SearchAgent()
+
+    while True:
+        user_choice = input("Would you like:\n"
+                            "1) BFS\n"
+                            "2) DFS\n"
+                            "3) A*\n"
+                            "type 'exit' to escape\n")
+        if user_choice == "1":
+            print("BFS: \n")
+            agent.breadth_first_search(problem)
+        elif user_choice == "2":
+            print("DFS: \n")
+            agent.depth_first_search(problem)
+        elif user_choice == "3":
+            print("A*: \n")
+            agent.a_star_search(problem)
+        elif user_choice == "exit":
+            break
+
+
+main()
