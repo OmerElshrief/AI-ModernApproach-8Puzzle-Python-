@@ -1,5 +1,12 @@
 from copy import deepcopy
 
+actions = {
+    1: "Up",
+    2: "Down",
+    3: "Left",
+    4: "right"
+}
+
 """A node in a search tree. Contains a pointer to the parent (the node
     that this is a successor of) and to the actual state for this node. Note
     that if a state is arrived at by two paths, then there are two nodes with
@@ -8,10 +15,16 @@ from copy import deepcopy
 
 
 class Node:
-    def __init__(self, state, parent, action, path_cost):
+    def __init__(self, state, parent, action, path_cost, nodes_expanded):
         self.state = state
         self.parent = parent
         self.path_cost = path_cost
+        self.nodes_expanded = nodes_expanded
+        # self.action = self.action.append(action)
+
+    def setAction(self, action):
+        if action:
+            self.action.append(actions.get(action))
 
 
 """The abstract class for a formal problem. You should subclass
@@ -22,7 +35,7 @@ of your subclass and solve them with the various search functions. """
 
 class Problem:
 
-    def __init__(self, initial, goal=None):
+    def __init__(self, initial):
         self.initialState = initial
         # The Goal of our problem, We will use this variable to perform the GoalTest""
         self.goalState = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
@@ -99,13 +112,12 @@ class Problem:
 
         return 0, 0
 
-    def getSolution(self, goalNode=Node(0, 0, 0, 0)):
-        node = Node(0, 0, 0, 0)
-        node = goalNode
-        count = 0;
-        print("Path cost = ", node.path_cost)
+    def getSolution(self, childGoal=Node(0, 0, 0, 0,0)):
+        goalNode = childGoal.parent
+        print("Path cost = ", goalNode.path_cost)
+        print("Path depth = ", goalNode.path_cost)
+        print("Nodes Expanded = ", childGoal.nodes_expanded)
         print("\n")
         while goalNode:
             print(goalNode.state)
             goalNode = goalNode.parent
-            count += 1
