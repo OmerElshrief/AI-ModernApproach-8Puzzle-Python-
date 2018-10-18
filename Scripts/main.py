@@ -5,6 +5,9 @@ from Scripts.SearchAgent import *
 
 def main():
     # Our test case: 1,2,5,3,4,0,6,7,8
+    # 3,1,2,6,4,5,0,7,8
+    # 1,4,2,3,0,5,6,7,8
+    # 1,4,2,0,3,5,6,7,8
     puz_str = input("Welcome \n please input your puzzle comma seperated:")
 
     # Parse input into a list

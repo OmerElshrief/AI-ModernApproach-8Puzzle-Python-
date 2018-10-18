@@ -1,8 +1,7 @@
 from collections import *
 from Scripts.problem import *
 from Scripts.helpers import *
-import sys
-
+import time
 
 """Abstracted Class for the Problem Solving Agent"""
 
@@ -39,27 +38,36 @@ class SearchAgent:
 
     def depth_first_search(self, problem):
         node = Node(problem.initialState, None, "initial", 0, 0)
-
         frontier = [node]
         explored = []
-        expanded = 0
-
+        start = time.time()
         while frontier:
             current = frontier.pop()
             explored.append(current)
 
             # getting all possible actions as a list
             possibleActions = problem.getActions(current.state)
-            # Number of expanded nodes at any given node is the number of possible moves
-            expanded = expanded+len(possibleActions)
+            possibleActions.reverse()
+
+            if problem.goalTest(current.state):
+                return problem.getSolution(current)
+
+            print("current:")
+            print(current.state)
             for action in possibleActions:
                 child = Node(problem.getNewState(current.state, action), current, actions.get(action),
                              current.path_cost + 1,
-                             expanded)
-                if problem.goalTest(current.state):
-                    return problem.getSolution(child)
-                if child not in explored and child not in frontier:
+                             current.nodes_expanded + len(frontier) + 1)
+                if not (any(prev.state == child.state for prev in explored) or any(prev.state == child.state for prev in
+                                                                                   frontier)):
                     frontier.append(child)
+            list = []
+            for child in frontier:
+                list.append(child.action)
+                print(list)
+            now = time.time() - start
+            print(now)
+            print("Break-------------------------------------------------------------------------------------")
         return False
 
 
