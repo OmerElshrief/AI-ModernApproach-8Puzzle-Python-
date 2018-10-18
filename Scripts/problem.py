@@ -1,6 +1,5 @@
 from copy import deepcopy
 
-
 """A node in a search tree. Contains a pointer to the parent (the node
     that this is a successor of) and to the actual state for this node. Note
     that if a state is arrived at by two paths, then there are two nodes with
@@ -13,6 +12,12 @@ class Node:
         self.state = state
         self.parent = parent
         self.path_cost = path_cost
+
+
+"""The abstract class for a formal problem. You should subclass
+this and implement the methods actions and result, and possibly
+__init__, goal_test, and path_cost. Then you will create instances
+of your subclass and solve them with the various search functions. """
 
 
 class Problem:
@@ -104,5 +109,3 @@ class Problem:
             print(goalNode.state)
             goalNode = goalNode.parent
             count += 1
-
-

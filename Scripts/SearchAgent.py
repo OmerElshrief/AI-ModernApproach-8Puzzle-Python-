@@ -27,17 +27,6 @@ class Stack:
             return self.stack.pop()
 
 
-
-
-
-"""The abstract class for a formal problem. You should subclass
-this and implement the methods actions and result, and possibly
-__init__, goal_test, and path_cost. Then you will create instances
-of your subclass and solve them with the various search functions. """
-
-
-
-
 """Abstracted Class for the Problem Solving Agent"""
 
 
@@ -97,7 +86,7 @@ class SearchAgent:
 
         node = Scripts.problem.Node(problem.initialState, None, None, 0)
 
-        if (problem.goalTest(node.state)):
+        if problem.goalTest(node.state):
             return problem.getSolution(node.state)
         frontier = queue.PriorityQueue()
         explored = list()
@@ -123,9 +112,11 @@ class SearchAgent:
 initialCondition = [[1, 2, 5], [3, 4, 0], [6, 7, 8]]
 problem = Scripts.problem.Problem(initialCondition)
 agent = SearchAgent()
-print("DFS: \n")
-agent.depth_first_search(problem)
-# print("UCS: \n")
-# agent.uniform_cost_search(problem)
+# print("BFS: \n")
+# agent.breadth_first_search(problem)
+# print("DFS: \n")
+# agent.depth_first_search(problem)
+print("UCS: \n")
+agent.uniform_cost_search(problem)
 # top = tkinter.Tk()
 # top.mainloop()
