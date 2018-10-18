@@ -19,7 +19,6 @@ class SearchAgent:
         frontier = deque()
         frontier.append(node)
         explored = []
-        expanded = 0
         while frontier:
             current = frontier.popleft()
             explored.append(current)
