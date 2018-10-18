@@ -50,7 +50,7 @@ class Problem:
             if j == 0:  # The First block of the Board, The Zero position may only go to EAST and SOUTH
                 return 2, 3
             if j == 1:  # The Second block of the Board, The Zero position may go to EAST , SOUTH and WEST
-                return 2, 3, 4
+                return 2, 4, 3
             if j == 2:  # The Third block of the Board, The Zero position may go to SOUTH and WEST
                 return 2, 4
 
@@ -58,15 +58,15 @@ class Problem:
             if j == 0:  # The Fourth block of the Board, The Zero position may go to NoORTH, EAST and SOUTH
                 return 1, 2, 3
             if j == 1:  # The Fifth block of the Board, The Zero position may go to any position
-                return 1, 2, 3, 4
+                return 1, 2, 4, 3
             if j == 2:  # The Sixth block of the Board, The Zero position may  go to NORTH, WEST and SOUTH
-                return 4, 2, 1
+                return 1, 2, 4
 
         if i == 2:
             if j == 0:  # The Seventh block of the Board, The Zero position may go to NoORTH, EAST
                 return 1, 3
             if j == 1:  # The Eighth block of the Board, The Zero position may go to NORTH, EAST and WEST
-                return 1, 3, 4
+                return 1, 4, 3
             if j == 2:  # The Ninth block of the Board, The Zero position may  go to NORTH, WEST
                 return 1, 4
 
@@ -110,7 +110,8 @@ class Problem:
         return 0, 0
 
     def getSolution(self, childGoal=Node(0, 0, 0, 0,0)):
-        goalNode = childGoal.parent
+        # goalNode = childGoal.parent
+        goalNode = childGoal
         steps = []
         print("Path cost = ", goalNode.path_cost)
         print("Path depth = ", goalNode.path_cost)

@@ -21,6 +21,31 @@ class SearchAgent:
         explored = []
         expanded = 0
         while frontier:
+            current = frontier.popleft()
+            explored.append(current)
+
+            # getting all possible actions as a list
+            possibleActions = problem.getActions(current.state)
+
+            if problem.goalTest(current.state):
+                return problem.getSolution(current)
+
+            for action in possibleActions:
+                child = Node(problem.getNewState(current.state, action), current, actions.get(action), current.path_cost + 1,
+                             current.nodes_expanded+len(frontier)+1)
+                if not (any(prev.state == child.state for prev in explored) or any(prev.state == child.state for prev in
+                                                                                   frontier)):
+                    frontier.append(child)
+        return False
+
+    def depth_first_search(self, problem):
+        node = Node(problem.initialState, None, "initial", 0, 0)
+
+        frontier = [node]
+        explored = []
+        expanded = 0
+
+        while frontier:
             current = frontier.pop()
             explored.append(current)
 
@@ -28,20 +53,15 @@ class SearchAgent:
             possibleActions = problem.getActions(current.state)
             # Number of expanded nodes at any given node is the number of possible moves
             expanded = expanded+len(possibleActions)
-
             for action in possibleActions:
-                child = Node(problem.getNewState(current.state, action), current, actions.get(action), current.path_cost + 1,
+                child = Node(problem.getNewState(current.state, action), current, actions.get(action),
+                             current.path_cost + 1,
                              expanded)
                 if problem.goalTest(current.state):
                     return problem.getSolution(child)
                 if child not in explored and child not in frontier:
                     frontier.append(child)
         return False
-
-    def depth_first_search(self, problem):
-        node = Node(problem.initialState, None, "initial", 0, 0)
-
-
 
 
         # if problem.goalTest(node.state):
