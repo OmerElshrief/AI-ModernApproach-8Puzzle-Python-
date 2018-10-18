@@ -14,7 +14,7 @@ class SearchAgent:
         self.state = state
 
     def breadth_first_search(self, problem):
-        node = Node(problem.initialState, None, [], 0, 0)
+        node = Node(problem.initialState, None, "initial", 0, 0)
 
         frontier = deque()
         frontier.append(node)
@@ -30,7 +30,7 @@ class SearchAgent:
             expanded = expanded+len(possibleActions)
 
             for action in possibleActions:
-                child = Node(problem.getNewState(current.state, action), current, action, current.path_cost + 1,
+                child = Node(problem.getNewState(current.state, action), current, actions.get(action), current.path_cost + 1,
                              expanded)
                 if problem.goalTest(current.state):
                     return problem.getSolution(child)
@@ -38,48 +38,28 @@ class SearchAgent:
                     frontier.append(child)
         return False
 
+    def depth_first_search(self, problem):
+        node = Node(problem.initialState, None, "initial", 0, 0)
+
+
+
 
         # if problem.goalTest(node.state):
         #     return problem.getSolution(node.state)
-        # frontier = queue.Queue()
+        # frontier = Stack()
         # explored = list()
         # visited = list()
-        # frontier.put(node)
-        # visited.append(node)
+        # frontier.add(node)
+        # visited.append(node.state)
         # while frontier:
-        #     node = frontier.get()
-        #
+        #     node = frontier.remove()
         #     for action in problem.getActions(node.state):
-        #         child = Node(problem.getNewState(node.state, action), node, node.action, node.path_cost + 1)
-        #         child.setAction(action)
+        #         child = Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
+        #
         #         if problem.goalTest(child.state):
         #             return problem.getSolution(child)
-        #         if child not in visited and child not in explored:
-        #             frontier.put(child)
-        #             visited.append(child)
+        #         if child.state not in visited and child not in explored:
+        #             frontier.add(child)
+        #             visited.append(child.state)
         #
         #     explored.append(node)
-        # return explored
-
-    def depth_first_search(self, problem):
-        node = Node(problem.initialState, None, None, 1)
-
-        if problem.goalTest(node.state):
-            return problem.getSolution(node.state)
-        frontier = Stack()
-        explored = list()
-        visited = list()
-        frontier.add(node)
-        visited.append(node.state)
-        while frontier:
-            node = frontier.remove()
-            for action in problem.getActions(node.state):
-                child = Node(problem.getNewState(node.state, action), node, action, node.path_cost + 1)
-
-                if problem.goalTest(child.state):
-                    return problem.getSolution(child)
-                if child.state not in visited and child not in explored:
-                    frontier.add(child)
-                    visited.append(child.state)
-
-            explored.append(node)

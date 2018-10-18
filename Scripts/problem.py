@@ -1,10 +1,11 @@
 from copy import deepcopy
 
+# this is to be exported and used to map the values returned by the get actions to add steps to each node
 actions = {
     1: "Up",
     2: "Down",
-    3: "Left",
-    4: "right"
+    3: "Right",
+    4: "Left"
 }
 
 """A node in a search tree. Contains a pointer to the parent (the node
@@ -20,11 +21,7 @@ class Node:
         self.parent = parent
         self.path_cost = path_cost
         self.nodes_expanded = nodes_expanded
-        # self.action = self.action.append(action)
-
-    def setAction(self, action):
-        if action:
-            self.action.append(actions.get(action))
+        self.action = action
 
 
 """The abstract class for a formal problem. You should subclass
@@ -114,10 +111,14 @@ class Problem:
 
     def getSolution(self, childGoal=Node(0, 0, 0, 0,0)):
         goalNode = childGoal.parent
+        steps = []
         print("Path cost = ", goalNode.path_cost)
         print("Path depth = ", goalNode.path_cost)
         print("Nodes Expanded = ", childGoal.nodes_expanded)
         print("\n")
         while goalNode:
             print(goalNode.state)
+            steps.append(goalNode.action)
             goalNode = goalNode.parent
+        steps.reverse()
+        print("Steps = ", steps)
