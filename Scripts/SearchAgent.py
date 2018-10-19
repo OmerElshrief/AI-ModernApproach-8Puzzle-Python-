@@ -1,7 +1,8 @@
 from collections import *
 from Scripts.problem import *
 from Scripts.helpers import *
-import heapq
+from Scripts.heuristic import *
+import heapq as H
 import time
 
 """Abstracted Class for the Problem Solving Agent"""
@@ -10,14 +11,15 @@ import time
 class SearchAgent:
 
     # function to solve a given problem using BFS
-    def __init__(self, state={}):
+    def __init__(self, state=None):
+        if state is None:
+            state = {}
         self.state = state
 
     def breadth_first_search(self, problem):
-        node = Node(problem.initialState, None, "initial", 0, 0)
-
+        tree = SearchTree(problem.initialState)
         frontier = deque()
-        frontier.append(node)
+        frontier.append(tree.get_root())
         explored = []
         start = time.time()
 
@@ -30,15 +32,18 @@ class SearchAgent:
 
             print("current:")
             print(current.state)
+            print('Explored: ', tree.nodes_expanded)
+
 
             if problem.goalTest(current.state):
                 now = time.time() - start
-                return problem.getSolution(current, now)
+                tree.set_goal(current)
+                return problem.getSolution(tree, now, "BFS")
+            tree.set_nodes_expanded()
 
             for action in possibleActions:
-                child = Node(problem.getNewState(current.state, action), current, actions.get(action),
-                             current.path_cost + 1,
-                             current.nodes_expanded+len(frontier)+1)
+                child = tree.get_child(problem.getNewState(current.state, action), current, actions.get(action),
+                                       current.depth + 1)
 
                 if not (any(prev.state == child.state for prev in explored) or any(prev.state == child.state for prev in
                                                                                    frontier)):
@@ -48,8 +53,8 @@ class SearchAgent:
         print(now)
 
     def depth_first_search(self, problem):
-        node = Node(problem.initialState, None, "initial", 0, 0)
-        frontier = [node]
+        tree = SearchTree(problem.initialState)
+        frontier = [tree.get_root()]
         explored = []
         start = time.time()
         while frontier:
@@ -65,26 +70,105 @@ class SearchAgent:
 
             if problem.goalTest(current.state):
                 now = time.time() - start
-                return problem.getSolution(current, now)
+                tree.set_goal(current)
+                return problem.getSolution(tree, now, "DFS")
+            tree.set_nodes_expanded()
 
             for action in possibleActions:
-                child = Node(problem.getNewState(current.state, action), current, actions.get(action),
-                             current.path_cost + 1,
-                             current.nodes_expanded + len(frontier) + 1)
+                child = tree.get_child(problem.getNewState(current.state, action), current, actions.get(action),
+                                       current.depth + 1)
                 if not (any(prev.state == child.state for prev in explored) or any(prev.state == child.state for prev in
                                                                                    frontier)):
                     frontier.append(child)
-            now = time.time() - start
-            print("Failure! Time:")
-            print(now)
+        now = time.time() - start
+        print("Failure! Time:")
+        print(now)
 
     def a_star_search(self, problem):
-        node = Node(problem.initialState, None, "initial", 0, 0)
-        frontier = []
-        heapq.heappush(frontier, node)
+        self.a_star_search_manhattan(problem)
+
+    def decrease_key(self, frontier, neighbor):
+        heaped = [(cost, currentAction, currentTime, state, node) for cost, currentAction, currentTime, state, node in frontier]
+
+        for item in heaped:
+            index = heaped.index(item)
+            if neighbor.state is item[1] and neighbor.cost < item[0]:
+                heaped[index] = node_to_tuple_with_time(neighbor)
+                H.heapify(heaped)
+        return heaped
+
+    def a_star_search_manhattan(self, problem):
+        tree = SearchTree(problem.initialState)
+
+        # to use priority in the heaps I am going to use a tuple with 3 data inputs cost, state and NODE
+        frontier = [node_to_tuple_with_time(tree.get_root())]
+        H.heapify(frontier)
         explored = []
         start = time.time()
 
         while frontier:
-            current = heapq.heappop(frontier)
-            
+            cost, currentAction, currentTime, state,  current = H.heappop(frontier)
+            explored.append(current)
+
+            # getting all possible actions as a list
+            possibleActions = problem.getActions(current.state)
+
+            print("current:")
+            print(current.state)
+            print('Explored: ', tree.nodes_expanded)
+
+            if problem.goalTest(current.state):
+                now = time.time() - start
+                tree.set_goal(current)
+                return problem.getSolution(tree, now, "A*-Manhattan")
+            tree.set_nodes_expanded()
+
+            for action in possibleActions:
+                childState = problem.getNewState(current.state, action)
+                child = tree.get_child(childState, current, actions.get(action),
+                                       current.depth + 1, current.cost+get_manhattan(childState)+1)
+
+                if not (any(prev.state == child.state for prev in explored) or any(state == child.state for cost, currentAction, currentTime, state,  current in
+                                                                                   frontier)):
+                    frontier.append(node_to_tuple_with_time(child))
+                else:
+                    frontier = self.decrease_key(frontier, child)
+
+        now = time.time() - start
+        print("Failure! Time:")
+        print(now)
+
+    def a_star_search_euclidean(self, problem):
+        tree = SearchTree(problem.initialState)
+
+        # to use priority in the heaps I am going to use a tuple with 3 data inputs cost, state and NODE
+        frontier = [tree.get_root()]
+        H.heapify(frontier)
+        explored = []
+        start = time.time()
+
+        while frontier:
+            cost, state, current = H.heappop(frontier)
+            explored.append(current)
+
+            # getting all possible actions as a list
+            possibleActions = problem.getActions(current.state)
+
+            if problem.goalTest(current.state):
+                now = time.time() - start
+                tree.set_goal(current)
+                return problem.getSolution(tree, now, "A*-Euclidean")
+            tree.set_nodes_expanded()
+
+            for action in possibleActions:
+                child = tree.get_child(problem.getNewState(current.state, action), current, actions.get(action),
+                                       current.depth + 1, 1)
+
+                if not (any(prev.state == child.state for prev in explored) or any(
+                        prev.state == child.state for prev in
+                        frontier)):
+                    frontier.append(child)
+
+        now = time.time() - start
+        print("Failure! Time:")
+        print(now)

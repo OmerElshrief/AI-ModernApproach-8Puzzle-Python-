@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d3dd8e3-9862-43a2-a731-6ea129b37880" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Scripts/heuristic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/SearchAgent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/SearchAgent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/problem.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,24 +25,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="15" />
+          <entry key="py" value="17" />
+          <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="15" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3206" />
-          <entry key="txt" value="401" />
+          <entry key="py" value="6932" />
+          <entry key="txt" value="473" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="401" />
-          <entry key="Python" value="3206" />
+          <entry key="PLAIN_TEXT" value="473" />
+          <entry key="Python" value="6932" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -50,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="38" />
+            <state relative-caret-position="119">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -59,10 +64,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripts/SearchAgent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="63" column="21" selection-start-line="63" selection-end-line="64" />
+            <state relative-caret-position="214">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
+                <marker date="1539982966761" expanded="true" signature="3144:3539" ph="..." />
               </folding>
             </state>
           </provider>
@@ -71,13 +77,58 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/problem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+            <state relative-caret-position="156">
+              <caret line="149" column="17" selection-start-line="149" selection-start-column="12" selection-end-line="149" selection-end-column="17" />
+              <folding>
+                <marker date="1539975168918" expanded="true" signature="908:1504" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/helpers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1539974388500" expanded="true" signature="280:364" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/log.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2652">
+              <caret line="46162" column="19" selection-start-line="46162" selection-start-column="19" selection-end-line="46162" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/heuristic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>path_cost</find>
+      <find>cost</find>
+      <find>Nodes</find>
+      <find>print</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,9 +136,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Scripts/log.txt" />
         <option value="$PROJECT_DIR$/Scripts/helpers.py" />
         <option value="$PROJECT_DIR$/Scripts/problem.py" />
         <option value="$PROJECT_DIR$/Scripts/main.py" />
+        <option value="$PROJECT_DIR$/Scripts/heuristic.py" />
         <option value="$PROJECT_DIR$/Scripts/SearchAgent.py" />
       </list>
     </option>
@@ -218,6 +271,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="problem" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AIModernApproach8Puzzle" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/problem.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
       <module name="AIModernApproach8Puzzle" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -308,11 +382,13 @@
     <list>
       <item itemvalue="Python.SearchAgent" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.problem" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.SearchAgent" />
+        <item itemvalue="Python.problem" />
       </list>
     </recent_temporary>
   </component>
@@ -383,27 +459,50 @@
       <option name="project" value="LOCAL" />
       <updated>1539888198175</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Checking DFS and acting correctly">
+      <created>1539892552818</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1539892552818</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Adding search tree to hold expansions">
+      <created>1539939770459</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1539939770459</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2568746" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.2568746" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3297587" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3297587" />
       <window_info anchor="bottom" id="Python Console" order="2" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3297587" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.3297587" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.541555" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.44369972" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.3297587" />
       <window_info anchor="right" id="R Graphics" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="R Packages" order="2" />
@@ -412,19 +511,19 @@
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2568746" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.2568746" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3297587" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.3297587" />
       <window_info anchor="bottom" id="Python Console" order="2" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3297587" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.3297587" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.541555" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.26541555" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.3297587" />
       <window_info anchor="right" id="R Graphics" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="R Packages" order="2" />
@@ -480,7 +579,9 @@
     <MESSAGE value="BFS working with steps" />
     <MESSAGE value="BFS Fix to pop as a queue" />
     <MESSAGE value="changed getActions to return lists instead of tuples" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed getActions to return lists instead of tuples" />
+    <MESSAGE value="Checking DFS and acting correctly" />
+    <MESSAGE value="Adding search tree to hold expansions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding search tree to hold expansions" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Scripts/activate_this.py">
@@ -500,33 +601,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2652">
+          <caret line="46162" column="19" selection-start-line="46162" selection-start-column="19" selection-end-line="46162" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1539974388500" expanded="true" signature="280:364" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/problem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+        <state relative-caret-position="156">
+          <caret line="149" column="17" selection-start-line="149" selection-start-column="12" selection-end-line="149" selection-end-column="17" />
+          <folding>
+            <marker date="1539975168918" expanded="true" signature="908:1504" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/heuristic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="38" />
+        <state relative-caret-position="119">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/SearchAgent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="63" column="21" selection-start-line="63" selection-end-line="64" />
+        <state relative-caret-position="214">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+            <marker date="1539982966761" expanded="true" signature="3144:3539" ph="..." />
           </folding>
         </state>
       </provider>

@@ -5,9 +5,12 @@ from Scripts.SearchAgent import *
 
 def main():
     # Our test case: 1,2,5,3,4,0,6,7,8
-    # 3,1,2,6,4,5,0,7,8
+    # 3,1,2,0,4,5,6,7,8 up
+    # 3,1,2,6,4,5,0,7,8 up up
     # 1,4,2,3,0,5,6,7,8
     # 1,4,2,0,3,5,6,7,8
+    # 6,1,8,4,0,2,7,3,5
+    # 8,6,4,2,1,3,5,7,0
     puz_str = input("Welcome \n please input your puzzle comma seperated:")
 
     # Parse input into a list
