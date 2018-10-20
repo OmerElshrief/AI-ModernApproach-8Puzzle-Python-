@@ -9,8 +9,9 @@ actions = {
 rev_actions = {
     "Up": 1,
     "Down": 2,
-    "Right": 3,
-    "Left": 4
+    "Left": 3,
+    "Right": 4
+
 }
 
 """A node in a search tree. Contains a pointer to the parent (the node

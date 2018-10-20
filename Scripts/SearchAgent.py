@@ -92,9 +92,9 @@ class SearchAgent:
 
         for item in heaped:
             index = heaped.index(item)
+            print("HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEee", neighbor.state, neighbor.cost, item[2], item[0])
             if neighbor.state == item[2] and neighbor.cost < item[0]:
-                print("HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEee")
-
+                print("INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN")
                 heaped[index] = node_to_tuple_with_time(neighbor)
         return heaped
 
@@ -135,7 +135,7 @@ class SearchAgent:
             for action in possibleActions:
                 childState = problem.getNewState(current.state, action)
                 child = tree.get_child(childState, current, actions.get(action),
-                                       current.depth + 1, get_manhattan(childState) + 1)
+                                       current.depth + 1, current.cost - get_manhattan(current.state)+get_manhattan(childState) + 1)
                 # print("child: ", childState, get_manhattan(childState))
 
                 if any(state == child.state for cost, currentAction, state, current in frontier):

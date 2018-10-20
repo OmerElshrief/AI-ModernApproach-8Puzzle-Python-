@@ -1,4 +1,3 @@
-from Scripts.problem import *
 from math import pow, sqrt
 
 

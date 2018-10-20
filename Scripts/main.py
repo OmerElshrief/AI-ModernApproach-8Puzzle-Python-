@@ -12,6 +12,7 @@ def main():
     # 1,4,2,0,3,5,6,7,8
     # 6,1,8,4,0,2,7,3,5
     # 8,6,4,2,1,3,5,7,0
+    #0,6,4,7,3,8,1,5,2
     puz_str = input("Welcome \n please input your puzzle comma seperated:")
 
     # Parse input into a list

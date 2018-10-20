@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$" mnemonic="8" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="8d3dd8e3-9862-43a2-a731-6ea129b37880" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/SearchAgent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/SearchAgent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/heuristic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/heuristic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/problem.py" afterDir="false" />
     </list>
@@ -39,14 +36,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="7676" />
-          <entry key="txt" value="487" />
+          <entry key="py" value="7825" />
+          <entry key="txt" value="511" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="487" />
-          <entry key="Python" value="7676" />
+          <entry key="PLAIN_TEXT" value="511" />
+          <entry key="Python" value="7825" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -57,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="154">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -66,11 +63,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripts/SearchAgent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="94" column="39" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
+            <state relative-caret-position="140">
+              <caret line="137" column="70" lean-forward="true" selection-start-line="137" selection-start-column="70" selection-end-line="137" selection-end-column="127" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <marker date="1539994674938" expanded="true" signature="3196:3856" ph="..." />
+                <marker date="1540026346679" expanded="true" signature="3196:3977" ph="..." />
               </folding>
             </state>
           </provider>
@@ -79,10 +76,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/problem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="158" column="44" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="44" />
+            <state relative-caret-position="204">
+              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
               <folding>
-                <marker date="1539993572545" expanded="true" signature="908:1504" ph="..." />
+                <marker date="1539996304028" expanded="true" signature="909:1505" ph="..." />
               </folding>
             </state>
           </provider>
@@ -91,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/helpers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+            <state>
+              <caret column="39" selection-start-column="39" selection-end-column="39" />
               <folding>
                 <marker date="1539994631282" expanded="true" signature="268:339" ph="..." />
               </folding>
@@ -112,12 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/heuristic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
+            <state relative-caret-position="-84" />
           </provider>
         </entry>
       </file>
@@ -140,10 +132,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Scripts/log.txt" />
-        <option value="$PROJECT_DIR$/Scripts/heuristic.py" />
-        <option value="$PROJECT_DIR$/Scripts/main.py" />
-        <option value="$PROJECT_DIR$/Scripts/problem.py" />
         <option value="$PROJECT_DIR$/Scripts/helpers.py" />
+        <option value="$PROJECT_DIR$/Scripts/main.py" />
+        <option value="$PROJECT_DIR$/Scripts/heuristic.py" />
+        <option value="$PROJECT_DIR$/Scripts/problem.py" />
         <option value="$PROJECT_DIR$/Scripts/SearchAgent.py" />
       </list>
     </option>
@@ -483,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539983169135</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="A* working issue in depth">
+      <created>1539994878214</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1539994878214</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -497,7 +496,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2568746" />
@@ -508,7 +506,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3297587" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.3297587" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.7104558" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.45844504" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -592,7 +590,8 @@
     <MESSAGE value="Checking DFS and acting correctly" />
     <MESSAGE value="Adding search tree to hold expansions" />
     <MESSAGE value="A* in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="A* in progress" />
+    <MESSAGE value="A* working issue in depth" />
+    <option name="LAST_COMMIT_MESSAGE" value="A* working issue in depth" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Scripts/activate_this.py">
@@ -619,50 +618,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/heuristic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
           <folding>
             <marker date="1539994631282" expanded="true" signature="268:339" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/heuristic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/problem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="158" column="44" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="44" />
+        <state relative-caret-position="204">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding>
-            <marker date="1539993572545" expanded="true" signature="908:1504" ph="..." />
+            <marker date="1539996304028" expanded="true" signature="909:1505" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="154">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/SearchAgent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="94" column="39" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
+        <state relative-caret-position="140">
+          <caret line="137" column="70" lean-forward="true" selection-start-line="137" selection-start-column="70" selection-end-line="137" selection-end-column="127" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <marker date="1539994674938" expanded="true" signature="3196:3856" ph="..." />
+            <marker date="1540026346679" expanded="true" signature="3196:3977" ph="..." />
           </folding>
         </state>
       </provider>
