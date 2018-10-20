@@ -4,8 +4,8 @@
     <list default="true" id="8d3dd8e3-9862-43a2-a731-6ea129b37880" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/SearchAgent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/SearchAgent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/heuristic.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/heuristic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/problem.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,14 +36,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="7825" />
-          <entry key="txt" value="511" />
+          <entry key="py" value="8173" />
+          <entry key="txt" value="527" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="511" />
-          <entry key="Python" value="7825" />
+          <entry key="PLAIN_TEXT" value="527" />
+          <entry key="Python" value="8173" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -54,32 +54,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Scripts/SearchAgent.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="137" column="70" lean-forward="true" selection-start-line="137" selection-start-column="70" selection-end-line="137" selection-end-column="127" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-                <marker date="1540026346679" expanded="true" signature="3196:3977" ph="..." />
-              </folding>
+            <state relative-caret-position="137">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/SearchAgent.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-965">
+              <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <marker date="1540034810076" expanded="true" signature="3208:3996" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripts/problem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            <state relative-caret-position="129">
+              <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
               <folding>
-                <marker date="1539996304028" expanded="true" signature="909:1505" ph="..." />
+                <marker date="1540035460360" expanded="true" signature="909:1614" ph="..." />
               </folding>
             </state>
           </provider>
@@ -88,10 +88,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/helpers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="39" selection-start-column="39" selection-end-column="39" />
+            <state relative-caret-position="204">
+              <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
               <folding>
-                <marker date="1539994631282" expanded="true" signature="268:339" ph="..." />
+                <marker date="1540034397890" expanded="true" signature="270:352" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,7 +109,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripts/heuristic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-84" />
+            <state>
+              <caret column="26" selection-start-column="26" selection-end-column="26" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -123,6 +125,8 @@
       <find>bfs</find>
       <find>54</find>
       <find>print</find>
+      <find>node_</find>
+      <find>get_man</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,11 +136,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Scripts/log.txt" />
-        <option value="$PROJECT_DIR$/Scripts/helpers.py" />
-        <option value="$PROJECT_DIR$/Scripts/main.py" />
         <option value="$PROJECT_DIR$/Scripts/heuristic.py" />
-        <option value="$PROJECT_DIR$/Scripts/problem.py" />
+        <option value="$PROJECT_DIR$/Scripts/main.py" />
+        <option value="$PROJECT_DIR$/Scripts/helpers.py" />
         <option value="$PROJECT_DIR$/Scripts/SearchAgent.py" />
+        <option value="$PROJECT_DIR$/Scripts/problem.py" />
       </list>
     </option>
   </component>
@@ -237,6 +241,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="helpers" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AIModernApproach8Puzzle" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripts/helpers.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -378,10 +403,12 @@
       <item itemvalue="Python.SearchAgent" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.problem" />
+      <item itemvalue="Python.helpers" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.helpers" />
         <item itemvalue="Python.SearchAgent" />
         <item itemvalue="Python.problem" />
       </list>
@@ -482,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539994878214</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="A* working fix depth issue">
+      <created>1540026771521</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1540026771521</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -496,6 +530,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2568746" />
@@ -506,7 +541,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3297587" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.3297587" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.45844504" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.41689008" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -591,7 +626,8 @@
     <MESSAGE value="Adding search tree to hold expansions" />
     <MESSAGE value="A* in progress" />
     <MESSAGE value="A* working issue in depth" />
-    <option name="LAST_COMMIT_MESSAGE" value="A* working issue in depth" />
+    <MESSAGE value="A* working fix depth issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="A* working fix depth issue" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Scripts/activate_this.py">
@@ -618,45 +654,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/helpers.py">
+    <entry file="file://$PROJECT_DIR$/Scripts/heuristic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="39" selection-start-column="39" selection-end-column="39" />
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
           <folding>
-            <marker date="1539994631282" expanded="true" signature="268:339" ph="..." />
+            <marker date="1540034397890" expanded="true" signature="270:352" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/heuristic.py">
+    <entry file="file://$PROJECT_DIR$/Scripts/SearchAgent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/problem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        <state relative-caret-position="-965">
+          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
           <folding>
-            <marker date="1539996304028" expanded="true" signature="909:1505" ph="..." />
+            <element signature="e#0#25#0" expanded="true" />
+            <marker date="1540034810076" expanded="true" signature="3208:3996" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state relative-caret-position="137">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/SearchAgent.py">
+    <entry file="file://$PROJECT_DIR$/Scripts/problem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="137" column="70" lean-forward="true" selection-start-line="137" selection-start-column="70" selection-end-line="137" selection-end-column="127" />
+        <state relative-caret-position="129">
+          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <marker date="1540026346679" expanded="true" signature="3196:3977" ph="..." />
+            <marker date="1540035460360" expanded="true" signature="909:1614" ph="..." />
           </folding>
         </state>
       </provider>

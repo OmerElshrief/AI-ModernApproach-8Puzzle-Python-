@@ -1,6 +1,5 @@
 from math import pow, sqrt
 
-
 def get_index(array2d, item):
     for list in array2d:
         if item in list:

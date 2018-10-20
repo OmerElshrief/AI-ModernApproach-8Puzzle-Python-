@@ -38,6 +38,7 @@ class SearchTree:
         self.children = []
         self.nodes_expanded = 0
         self.goal = None
+        self.max_depth = 0
 
     def get_root(self):
         return self.root
@@ -48,6 +49,8 @@ class SearchTree:
     def get_child(self, state, parent, action, depth, cost=None):
         child = Node(state, parent, action, depth, cost)
         self.children.append(child)
+        if child.depth > self.max_depth:
+            self.max_depth = child.depth
         return child
 
     def set_nodes_expanded(self):
@@ -159,6 +162,7 @@ class Problem:
         goalNode = tree.get_goal()
         print("Path cost = ", goalNode.depth)
         print("Path depth = ", goalNode.depth)
+        print("Max depth = ", tree.max_depth)
         print("Nodes Expanded = ", tree.nodes_expanded)
         print("time Taken = ", time)
         # remove "initial"
