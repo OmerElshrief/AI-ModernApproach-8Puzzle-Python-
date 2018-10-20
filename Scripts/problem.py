@@ -2,8 +2,8 @@
 actions = {
     1: "Up",
     2: "Down",
-    3: "Right",
-    4: "Left"
+    3: "Left",
+    4: "Right"
 }
 
 rev_actions = {
@@ -74,33 +74,33 @@ class Problem:
         many actions, consider yielding them one at a time in an
         iterator, rather than building them all at once."""
     """The Possible actions are NORTH,SOUTH,EAST,WEST"""
-    """NORTH = 1, SOUTH =2, EAST =3, WEST=4"""
+    """NORTH = 1, SOUTH =2, WEST=3, EAST=4"""
 
     def getActions(self, state):
         i, j = self.getZeroPosition(state)
         if i == 0:
             if j == 0:  # The First block of the Board, The Zero position may only go to EAST and SOUTH
-                return [2, 3]
-            if j == 1:  # The Second block of the Board, The Zero position may go to EAST , SOUTH and WEST
-                return [2, 4, 3]
-            if j == 2:  # The Third block of the Board, The Zero position may go to SOUTH and WEST
                 return [2, 4]
+            if j == 1:  # The Second block of the Board, The Zero position may go to EAST , SOUTH and WEST
+                return [2, 3, 4]
+            if j == 2:  # The Third block of the Board, The Zero position may go to SOUTH and WEST
+                return [2, 3]
 
         if i == 1:
             if j == 0:  # The Fourth block of the Board, The Zero position may go to NoORTH, EAST and SOUTH
-                return [1, 2, 3]
-            if j == 1:  # The Fifth block of the Board, The Zero position may go to any position
-                return [1, 2, 4, 3]
-            if j == 2:  # The Sixth block of the Board, The Zero position may  go to NORTH, WEST and SOUTH
                 return [1, 2, 4]
+            if j == 1:  # The Fifth block of the Board, The Zero position may go to any position
+                return [1, 2, 3, 4]
+            if j == 2:  # The Sixth block of the Board, The Zero position may  go to NORTH, WEST and SOUTH
+                return [1, 2, 3]
 
         if i == 2:
             if j == 0:  # The Seventh block of the Board, The Zero position may go to NoORTH, EAST
-                return [1, 3]
-            if j == 1:  # The Eighth block of the Board, The Zero position may go to NORTH, EAST and WEST
-                return [1, 4, 3]
-            if j == 2:  # The Ninth block of the Board, The Zero position may  go to NORTH, WEST
                 return [1, 4]
+            if j == 1:  # The Eighth block of the Board, The Zero position may go to NORTH, EAST and WEST
+                return [1, 3, 4]
+            if j == 2:  # The Ninth block of the Board, The Zero position may  go to NORTH, WEST
+                return [1, 3]
 
     """Function: Returns a new state when the given action is executed in the given State"""
 
@@ -117,10 +117,10 @@ class Problem:
         elif action == 2:  # Action of going SOUTH
             # Swapping the Zero Region with the Lower Region by
             newState[i][j], newState[i + 1][j] = newState[i + 1][j], newState[i][j]
-        elif action == 3:  # Action of going EAST
+        elif action == 4:  # Action of going EAST
             # Swapping the Zero Region with the Right Region by
             newState[i][j], newState[i][j + 1] = newState[i][j + 1], newState[i][j]
-        elif action == 4:  # Action of going WEST
+        elif action == 3:  # Action of going WEST
             # Swapping the Zero Region with the Left Region by
             newState[i][j], newState[i][j - 1] = newState[i][j - 1], newState[i][j]
 
@@ -145,8 +145,10 @@ class Problem:
         f = open("log.txt", "a")
         f.write("------------------------" + searchName + "------------------------\n")
         steps = []
+        cost = 0
         goalNode = tree.get_goal()
         while goalNode:
+            cost = cost+goalNode.cost
             print(goalNode.state)
             f.write(str(goalNode.state) + "\n")
             steps.append(goalNode.action)
@@ -154,7 +156,7 @@ class Problem:
 
         # resetting goal node as it was changed in while loop
         goalNode = tree.get_goal()
-        print("Path cost = ", goalNode.cost)
+        print("Path cost = ", goalNode.depth)
         print("Path depth = ", goalNode.depth)
         print("Nodes Expanded = ", tree.nodes_expanded)
         print("time Taken = ", time)

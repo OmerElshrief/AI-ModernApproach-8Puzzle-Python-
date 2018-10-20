@@ -34,7 +34,6 @@ class SearchAgent:
             print(current.state)
             print('Explored: ', tree.nodes_expanded)
 
-
             if problem.goalTest(current.state):
                 now = time.time() - start
                 tree.set_goal(current)
@@ -67,6 +66,7 @@ class SearchAgent:
 
             print("current:")
             print(current.state)
+            print('Explored: ', tree.nodes_expanded)
 
             if problem.goalTest(current.state):
                 now = time.time() - start
@@ -88,26 +88,35 @@ class SearchAgent:
         self.a_star_search_manhattan(problem)
 
     def decrease_key(self, frontier, neighbor):
-        heaped = [(cost, currentAction, currentTime, state, node) for cost, currentAction, currentTime, state, node in frontier]
+        heaped = [(cost, currentAction, state, node) for cost, currentAction,state, node in frontier]
 
         for item in heaped:
             index = heaped.index(item)
-            if neighbor.state is item[1] and neighbor.cost < item[0]:
+            if neighbor.state == item[2] and neighbor.cost < item[0]:
+                print("HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEee")
+
                 heaped[index] = node_to_tuple_with_time(neighbor)
-                H.heapify(heaped)
         return heaped
+
+    def print_f(self, frontier):
+        heaped = [(cost, currentAction, state, node) for cost,currentAction, state, node in frontier]
+        H.heapify(heaped)
+        print("heap:")
+        while heaped:
+            print(H.heappop(heaped))
 
     def a_star_search_manhattan(self, problem):
         tree = SearchTree(problem.initialState)
 
         # to use priority in the heaps I am going to use a tuple with 3 data inputs cost, state and NODE
+        tree.root.cost = get_manhattan(tree.root.state)
         frontier = [node_to_tuple_with_time(tree.get_root())]
         H.heapify(frontier)
         explored = []
         start = time.time()
 
         while frontier:
-            cost, currentAction, currentTime, state,  current = H.heappop(frontier)
+            cost, currentAction, state, current = H.heappop(frontier)
             explored.append(current)
 
             # getting all possible actions as a list
@@ -126,13 +135,17 @@ class SearchAgent:
             for action in possibleActions:
                 childState = problem.getNewState(current.state, action)
                 child = tree.get_child(childState, current, actions.get(action),
-                                       current.depth + 1, current.cost+get_manhattan(childState)+1)
+                                       current.depth + 1, get_manhattan(childState) + 1)
+                # print("child: ", childState, get_manhattan(childState))
 
-                if not (any(prev.state == child.state for prev in explored) or any(state == child.state for cost, currentAction, currentTime, state,  current in
-                                                                                   frontier)):
-                    frontier.append(node_to_tuple_with_time(child))
-                else:
+                if any(state == child.state for cost, currentAction, state, current in frontier):
                     frontier = self.decrease_key(frontier, child)
+
+                elif not any(prev.state == child.state for prev in explored):
+                    H.heappush(frontier, node_to_tuple_with_time(child))
+                    # print(H.heappop(frontier))
+            self.print_f(frontier)
+            H.heapify(frontier)
 
         now = time.time() - start
         print("Failure! Time:")

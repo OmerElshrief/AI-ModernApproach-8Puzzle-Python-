@@ -1,4 +1,3 @@
-import time
 from Scripts.problem import rev_actions
 """Transforms any 1d array to 2d
  @param: array1d (list)
@@ -10,5 +9,5 @@ def to_matrix(array1d, n):
 
 
 def node_to_tuple_with_time(node):
-    return node.cost, rev_actions.get(node.action), time.time(), node.state, node
+    return node.cost, rev_actions.get(node.action), node.state, node
 
